@@ -1,4 +1,5 @@
-#include <cstdlib>
+#include <cstdlib> 
+
 // Person class 
 
 class Person{
@@ -6,6 +7,7 @@ class Person{
 		Person(int);
 		int get();
 		void set(int);
+		int fib();
 	private:
 		int age;
 	};
@@ -13,6 +15,14 @@ class Person{
 Person::Person(int n){
 	age = n;
 	}
+
+int Person::fib(){
+	if (get() <= 1)
+		return (get());
+	else {
+		return Person(get()-1).fib() + Person(get()-2).fib();
+}
+}
  
 int Person::get(){
 	return age;
