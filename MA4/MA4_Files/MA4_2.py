@@ -25,10 +25,18 @@ def fib_py(n):
 def main():
     
 	f = Person(5)
+	start1 = pc()
 	print(f.get())
-	f.set(7)
-	print(f.get())
-	print(fib_py(6))
+	fib_py(f.get())
+	end1 = pc()
+	start2 = pc()
+	print("numba")
+	fib_numba(f.get())
+	end2 = pc()
+	start1 = pc()
+	print("person")
+	f.fib()
+	end1 = pc()
 
 if __name__ == '__main__':
 	main()
