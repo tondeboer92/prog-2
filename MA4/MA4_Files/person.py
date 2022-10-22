@@ -1,7 +1,7 @@
 """ Python interface to the C++ Person class """
 import ctypes
 
-lib = ctypes.cdll.LoadLibrary('libperson.so')
+lib = ctypes.cdll.LoadLibrary('./libperson.so')
 
 
 class Person(object):
@@ -20,10 +20,10 @@ class Person(object):
 		return lib.Person_get(self.obj)
 
 	def fib(self):
-		return lib.Person_fib(self.age)
+		return lib.Person_fib(self.obj)
 
 	def set(self, age):
-		return lib.Person_set(self.obj, age)
+		lib.Person_set(self.obj, age)
         
 	def __del__(self):
 		return lib.Person_delete(self.obj)
