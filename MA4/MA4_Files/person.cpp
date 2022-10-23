@@ -1,7 +1,6 @@
 #include <cstdlib> 
+
 // Person class
-
-
 
 
 class Person{
